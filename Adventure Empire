@@ -1,0 +1,68 @@
+import time
+
+def slow_print(text):
+    """Funktion, um Text langsam anzuzeigen."""
+    for char in text:
+        print(char, end="", flush=True)
+        time.sleep(0.05)
+    print()
+
+def intro():
+    slow_print("Willkommen im Abenteuerland!")
+    slow_print("Du befindest dich in einem geheimen Wald und hast die Wahl, deinen Weg zu bestimmen.")
+    slow_print("Vor dir gibt es zwei Wege: Einen dunklen Waldweg und einen hell erleuchteten Pfad.")
+    slow_print("Was wirst du tun?")
+
+def choose_path():
+    while True:
+        choice = input("Wählst du den dunklen Waldweg oder den hellen Pfad? (dunkel/hell): ").lower()
+        if choice == "dunkel":
+            dark_forest()
+            break
+        elif choice == "hell":
+            bright_path()
+            break
+        else:
+            slow_print("Ungültige Wahl, bitte versuche es nochmal!")
+
+def dark_forest():
+    slow_print("Du gehst den dunklen Waldweg entlang. Die Bäume sind dicht und es ist fast völlig dunkel.")
+    slow_print("Plötzlich hörst du ein Geräusch hinter dir. Du drehst dich um und siehst... einen riesigen Bären!")
+    action = input("Was tust du? (kämpfen/fliehen): ").lower()
+
+    if action == "kämpfen":
+        slow_print("Du kämpfst tapfer gegen den Bären, aber er ist zu stark. Du verlierst.")
+        slow_print("Game Over.")
+    elif action == "fliehen":
+        slow_print("Du rennst so schnell du kannst und entkommst dem Bären. Glück gehabt!")
+        slow_print("Du gehst weiter und entdeckst ein magisches Portal, das dich in eine andere Welt bringt. Du hast gewonnen!")
+    else:
+        slow_print("Ungültige Wahl. Der Bär hat dich gefressen. Game Over.")
+    
+def bright_path():
+    slow_print("Du gehst den hellen Pfad entlang. Es ist wunderschön hier, und die Vögel zwitschern.")
+    slow_print("Nach einer Weile kommst du zu einem ruhigen See, auf dem ein kleines Boot schwimmt.")
+    action = input("Möchtest du das Boot nehmen und über den See fahren? (ja/nein): ").lower()
+
+    if action == "ja":
+        slow_print("Du fährst mit dem Boot über den See und erreichst eine Insel, die von einem Drachen bewacht wird.")
+        slow_print("Der Drache fragt: 'Warum solltest du die Insel betreten?'")
+        answer = input("Was antwortest du? (Weisheit/Mut): ").lower()
+
+        if answer == "weisheit":
+            slow_print("Der Drache nickt anerkennend und lässt dich passieren. Du findest einen Schatz!")
+            slow_print("Du hast gewonnen!")
+        elif answer == "mut":
+            slow_print("Der Drache wird wütend und vertreibt dich. Du fällst ins Wasser und ertrinkst. Game Over.")
+        else:
+            slow_print("Ungültige Antwort. Der Drache wird ungeduldig und vertreibt dich. Game Over.")
+    else:
+        slow_print("Du entscheidest dich, nicht das Boot zu nehmen und gehst weiter den Pfad entlang.")
+        slow_print("Doch der Weg führt zu einem Abgrund. Du fällst und stirbst. Game Over.")
+
+def main():
+    intro()
+    choose_path()
+
+if __name__ == "__main__":
+    main()
