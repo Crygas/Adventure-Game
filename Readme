@@ -1,0 +1,8 @@
+Anleitung:
+
+slow_print: Diese Funktion gibt Text nach und nach aus, um eine langsamere, dramatische Anzeige zu erzeugen.
+intro: Führt das Spiel ein und beschreibt die Situation.
+choose_path: Der Spieler kann einen von zwei Wegen wählen.
+dark_forest: Ein Szenario, bei dem der Spieler mit einem Bären konfrontiert wird.
+bright_path: Ein Szenario, bei dem der Spieler einen See überqueren muss und dabei auf einen Drachen trifft.
+main: Startet das Spiel.
